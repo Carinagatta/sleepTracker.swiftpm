@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct InfoView: View {
-    @State var name : String
+    @State var name : String = UserDefaults.standard.string(forKey: "name") ?? ""
     @State var birthday : Date
+    @State var age: Int
+    let year = Calendar.current.component(.year, from: Date())
+
 
     var body: some View {
         Text("Enter your name")
@@ -23,7 +26,7 @@ struct InfoView: View {
         }
         Button {
             UserDefaults.standard.set(name, forKey: "name")
-            UserDefaults.standard.set(birthday, forKey: "birthday")
+          //  age = year - birthday(.year)
         } label: {
             Text("Save")
         }
