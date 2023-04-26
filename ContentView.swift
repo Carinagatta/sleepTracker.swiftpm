@@ -6,7 +6,7 @@ struct ContentView: View {
             
             
             NavigationLink("Log Sleep"){
-                SleepLog()
+                sleepLog()
             }
             NavigationLink("sleep Goal"){
                 SleepGoal()
