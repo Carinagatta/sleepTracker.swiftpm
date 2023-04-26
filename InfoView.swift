@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InfoView: View {
-    @State var name : String = ""
+    @State var name : String
     @State var birthday : Date
 
     var body: some View {
@@ -22,7 +22,8 @@ struct InfoView: View {
                             .datePickerStyle(.compact)
         }
         Button {
-            
+            UserDefaults.standard.set(name, forKey: "name")
+            UserDefaults.standard.set(birthday, forKey: "birthday")
         } label: {
             Text("Save")
         }
