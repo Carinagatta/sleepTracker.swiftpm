@@ -16,8 +16,11 @@ struct Survey: View {
             Rectangle()
                 .foregroundColor(.indigo)
                 .frame(width: 100, height: 100)
-            Text("Sleep Survey")
-                .foregroundColor(.white)
+            VStack{
+                Text("Sleep Survey")
+                    .foregroundColor(.white)
+                Text("Is there liht inyour room when you are trying to sleep")
+            }
         }
     }
 }
