@@ -9,24 +9,23 @@ import SwiftUI
 
 struct InfoView: View {
     @State var name : String = UserDefaults.standard.string(forKey: "name") ?? ""
-    @State var birthday : Date
-    @State var age: Int
+    @State var age: Int = UserDefaults.standard.integer(forKey: "age")
     let year = Calendar.current.component(.year, from: Date())
 
 
     var body: some View {
         Text("Enter your name")
         TextField("name", text: $name)
-        Text("and your birthday")
-        VStack {
-            DatePicker(selection: $birthday, in: Date.now..., displayedComponents: .date) {
-                                Text("birthday")
-                            }
-                            .datePickerStyle(.compact)
-        }
+            .textFieldStyle(.roundedBorder)
+            .frame(width: 200, height: 10)
+        Text("and your age")
+        TextField("age", value: $age, format: .number)
+            .textFieldStyle(.roundedBorder)
+            .frame(width: 200, height: 10)
+        Spacer()
         Button {
             UserDefaults.standard.set(name, forKey: "name")
-          //  age = year - birthday(.year)
+            UserDefaults.standard.set(age, forKey: "age")
         } label: {
             Text("Save")
         }
