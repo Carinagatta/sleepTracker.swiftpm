@@ -13,9 +13,11 @@ struct logView: View {
     var body: some View {
           
                 VStack(alignment:.leading){
-                    Text(currentitem.bedTime)
-                        .font(.largeTitle)
+                    Text("bed time\(currentitem.bedTime)")
+                        .font(.title3)
                     Text("wakeup Time: \(currentitem.wakeupTime)")
+                        .font(.title3)
+                    Text("hours slep: \(currentitem.hoursSlept)")
                         .font(.title3)
                 }
             }

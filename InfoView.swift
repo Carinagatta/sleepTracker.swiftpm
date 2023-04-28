@@ -11,8 +11,8 @@ struct InfoView: View {
     @State var name : String = UserDefaults.standard.string(forKey: "name") ?? ""
     @State var age: Int = UserDefaults.standard.integer(forKey: "age")
     let year = Calendar.current.component(.year, from: Date())
-
-
+    
+    
     var body: some View {
         Text("Enter your name")
         TextField("name", text: $name)
@@ -29,6 +29,6 @@ struct InfoView: View {
         } label: {
             Text("Save")
         }
-
+        
     }
 }
