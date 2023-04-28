@@ -22,7 +22,8 @@ struct sleepLog: View {
                                logView(currentitem: currentitem)
                                    
                                   
-                           }
+             
+                    }
                            
                            .onDelete(perform: { indexSet in
                                removeItems(at: indexSet)

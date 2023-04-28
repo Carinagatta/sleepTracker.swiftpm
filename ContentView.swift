@@ -2,13 +2,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            
-            
-            NavigationLink("log sleep", destination: sleepLog())
-            NavigationLink("sleep goal", destination: SleepGoal())
-            NavigationLink("Take Survey", destination: Survey())
-            NavigationLink("sleep goal", destination: Nap())
+        NavigationView {
+        
+            VStack{
+                
+                
+                NavigationLink(destination: sleepLog()){
+                    Text("log sleep")
+                }
+                NavigationLink(destination: SleepGoal()){
+                    Text("sleep goal")
+                }
+                NavigationLink(destination: Survey()){
+                    Text("Take Survey")
+                }
+                NavigationLink(destination: Nap()){
+                    Text("sleep goal")
+                }
+            }
             
         }
     }
