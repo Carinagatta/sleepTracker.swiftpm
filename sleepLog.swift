@@ -13,13 +13,23 @@ struct sleepLog: View {
     var body: some View {
         
                 
-                    List(items,id: \.self) { currentitem in
-                        logView(currentitem: currentitem)
-                            .foregroundColor(.black)
-                            
-                        
-                    }
+        List{
+                           
                     
+                           
+                           ForEach(items, id:\.self) { currentitem in
+                               
+                               logView(currentitem: currentitem)
+                                   
+                                  
+                           }
+                           
+                           .onDelete(perform: { indexSet in
+                               removeItems(at: indexSet)
+                           })
+                       }
+                       .background(Color.black)
+                     
                     
                     .toolbar {
                         ToolbarItem(placement: .bottomBar) {
@@ -27,6 +37,9 @@ struct sleepLog: View {
                         }
                                    }
                 }
+    func removeItems(at offests: IndexSet){
+           items.remove(atOffsets: offests)
+       }
                
     }
 

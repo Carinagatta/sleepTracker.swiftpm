@@ -5,18 +5,11 @@ struct ContentView: View {
         VStack{
             
             
-            NavigationLink("Log Sleep"){
-                sleepLog()
-            }
-            NavigationLink("sleep Goal"){
-                SleepGoal()
-            }
-            NavigationLink("Take Survey"){
-                Survey()
-            }
-            NavigationLink("Nap Tracker"){
-                Nap()
-            }
+            NavigationLink("log sleep", destination: sleepLog())
+            NavigationLink("sleep goal", destination: SleepGoal())
+            NavigationLink("Take Survey", destination: Survey())
+            NavigationLink("sleep goal", destination: Nap())
+            
         }
     }
 }

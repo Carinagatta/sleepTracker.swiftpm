@@ -19,7 +19,20 @@ struct Survey: View {
             VStack{
                 Text("Sleep Survey")
                     .foregroundColor(.white)
-                Text("Is there liht inyour room when you are trying to sleep")
+                    .font(.largeTitle)
+                Text("Is there light in your room when you are trying to sleep")
+                    .foregroundColor(.white)
+                Text("Is your room quiet when you are tryig to sleep?")
+                    .foregroundColor(.white)
+                Text("Do you use your phone right before you are trying to sleep?")
+                    .foregroundColor(.white)
+                Text("is your room between 60 to 67 degreed Farengeight when you are trying to sleep?")
+                    .foregroundColor(.white)
+                Text("Do you exerscise less than an hour before going to sleep?")
+                    .foregroundColor(.white)
+                Text("Do you take neps 20 minutes or less before bed?")
+                    .foregroundColor(.white)
+                
             }
         }
     }
