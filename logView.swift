@@ -12,7 +12,7 @@ struct logView: View {
     let currentitem: logItems
     var body: some View {
           
-                VStack(alignment:.leading){
+                HStack{
                     Text("bed time\(currentitem.bedTime)")
                         .font(.title3)
                     Text("wakeup Time: \(currentitem.wakeupTime)")

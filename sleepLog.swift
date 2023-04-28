@@ -9,7 +9,8 @@ import SwiftUI
 
 struct sleepLog: View {
     @State var items: [logItems] = []
-    
+//    @Binding var Shours:String
+//    @Binding var Sminutes:String
     var body: some View {
         NavigationView(content: {
             
@@ -19,22 +20,26 @@ struct sleepLog: View {
             
             List{
                 
-                
+//               Text("Sleep log:           Sleep goal\(Shours) hours and\(Sminutes) minutes")
+//                                        .italic()
+//                                        .foregroundColor(.white)
+//                                        .font(.title)
+//                                        .listRowBackground(Color.blue)
                 
                 ForEach(items, id:\.self) { currentitem in
                     
                     logView(currentitem: currentitem)
                     
                     
-                    
+                        .listRowBackground(Color.blue.opacity(0.9))
                 }
                 
                 .onDelete(perform: { indexSet in
                     removeItems(at: indexSet)
                 })
             }
-            .background(Color.white)
             
+           
             
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
