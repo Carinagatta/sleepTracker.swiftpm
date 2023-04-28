@@ -14,13 +14,13 @@ struct headerView: View {
     @State var newItemhoursSlept: String = ""
     var body: some View {
         HStack{
-                   TextField("enter wakeup time", text: $newItemWakeupTime)
-                       .foregroundColor(.cyan)
+                   TextField("wakeup time", text: $newItemWakeupTime)
                       
-                   TextField("enter bed time", text: $newItembedTime)
-                       .foregroundColor(.cyan)
-            TextField("enter time slept", text: $newItemhoursSlept)
-                .foregroundColor(.cyan)
+                      
+                   TextField("bed time", text: $newItembedTime)
+                       
+            TextField("time slept", text: $newItemhoursSlept)
+              
             
             
                    Button(action: {

@@ -8,41 +8,47 @@
 import SwiftUI
 
 struct sleepLog: View {
-    @State var items: [logItems] = [ ]
-
+    @State var items: [logItems] = []
+    
     var body: some View {
-        
+        NavigationView(content: {
+            
+    
+            
+            
+            
+            List{
                 
-        List{
-                           
+                
+                
+                ForEach(items, id:\.self) { currentitem in
                     
-                           
-                           ForEach(items, id:\.self) { currentitem in
-                               
-                               logView(currentitem: currentitem)
-                                   
-                                  
-             
-                    }
-                           
-                           .onDelete(perform: { indexSet in
-                               removeItems(at: indexSet)
-                           })
-                       }
-                       .background(Color.black)
-                     
+                    logView(currentitem: currentitem)
                     
-                    .toolbar {
-                        ToolbarItem(placement: .bottomBar) {
-                            headerView(items: $items)
-                        }
-                                   }
+                    
+                    
                 }
-    func removeItems(at offests: IndexSet){
-           items.remove(atOffsets: offests)
-       }
-               
+                
+                .onDelete(perform: { indexSet in
+                    removeItems(at: indexSet)
+                })
+            }
+            .background(Color.white)
+            
+            
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    headerView(items: $items)
+                }
+            }
+    })
+        
     }
+    func removeItems(at offests: IndexSet){
+        items.remove(atOffsets: offests)
+    }
+    
+}
 
 
 
