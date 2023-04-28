@@ -28,7 +28,8 @@ struct sleepLog: View {
                                removeItems(at: indexSet)
                            })
                        }
-                    
+                       .background(Color.black)
+                     
                     
                     .toolbar {
                         ToolbarItem(placement: .bottomBar) {
