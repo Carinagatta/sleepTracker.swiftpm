@@ -5,6 +5,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 40){
+                Image(systemName: "bed.double")
+                    .resizable()
+                    .frame(width: 150, height: 90)
+                    .foregroundColor(.blue)
                 HStack {
                     NavigationLink(destination: sleepLog()){
                         ZStack {
@@ -44,6 +48,12 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
+                }
+                NavigationLink(destination: InfoView()){
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.blue)
                 }
             }
         }
