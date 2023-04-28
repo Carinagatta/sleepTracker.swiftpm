@@ -49,10 +49,10 @@ struct ContentView: View {
                     }
                 }
                 NavigationLink(destination: InfoView()){
-                        Image(systemName: "gearshape.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.blue)
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.blue)
                 }
             }
         }
