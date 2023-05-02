@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SleepTips: View {
+    
     var body: some View {
         VStack{
             Text("Make sure there is as little light as possible in your sleep enviornment")

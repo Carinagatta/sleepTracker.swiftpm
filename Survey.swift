@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Survey: View {
     @State private var overText = false
+        
     var body: some View {
         ZStack{
             Rectangle()
@@ -21,6 +22,8 @@ struct Survey: View {
                 Text("Sleep Survey")
                     .foregroundColor(.white)
                     .font(.largeTitle)
+                
+                
                 Group {
                     Text("Is there light in your room when you are trying to sleep?")
                         .foregroundColor(.white)
@@ -29,14 +32,18 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                                
                             }
                         Text("No")
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                                
                             }
                     }
                 }
+                
+                
                 Group {
                     Text("Is your room quiet when you are tryig to sleep?")
                         .foregroundColor(.white)
@@ -50,9 +57,12 @@ struct Survey: View {
                                     .foregroundColor(overText ?.white:.yellow)
                                     .onTapGesture {
                                         overText.toggle()
+                                        
                                     }
                     }
                 }
+               
+                
                 Group {
                     Text("Do you use your phone right before you are trying to sleep?")
                         .foregroundColor(.white)
@@ -62,6 +72,7 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                                
                             }
                         Text("NO")
                             .foregroundColor(overText ?.white:.yellow)
@@ -70,6 +81,8 @@ struct Survey: View {
                             }
                     }
                 }
+              
+                
                 Group {
                     Text("is your room between 60 to 67 degreed Farengeight when you are trying to sleep?")
                         .foregroundColor(.white)
@@ -83,9 +96,12 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                                
                             }
                     }
                 }
+              
+                
                 Group {
                     Text("Do you exerscise less than an hour before going to sleep?")
                         .foregroundColor(.white)
@@ -94,6 +110,7 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                                
                             }
                         Text("NO")
                             .foregroundColor(overText ?.white:.yellow)
@@ -102,8 +119,10 @@ struct Survey: View {
                             }
                     }
                 }
+           
+                
                 Group {
-                    Text("Do you take neps 20 minutes or less before bed?")
+                    Text("Do you take neps 20 minutes or less?")
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
@@ -115,10 +134,11 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                                
                             }
                     }
                 }
-                                        NavigationLink(destination: SleepTips()){
+                NavigationLink(destination: SleepTips()){
                                             Text("Get Sleep Tips")
                                         }
                                         .foregroundColor(.yellow)

@@ -12,7 +12,7 @@ struct ContentView: View {
                     .frame(width: 150, height: 90)
                     .foregroundColor(.blue)
                 HStack {
-                    NavigationLink(destination: sleepLog(Shours: $Shours, Sminutes: $Sminutes)){
+                    NavigationLink(destination: sleepLog(Shours: $Shours2, Sminutes: $Sminutes2)){
                         ZStack {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(.blue)
