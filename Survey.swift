@@ -45,10 +45,12 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                            }
                         Text("NO")
                                     .foregroundColor(overText ?.white:.yellow)
                                     .onTapGesture {
                                         overText.toggle()
+                                    }
                     }
                 }
                 Group {
@@ -60,12 +62,13 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                            }
                         Text("NO")
-                                    .foregroundColor(overText ?.white:.yellow)
-                                    .onTapGesture {
-                                        overText.toggle()
-                                        
-                                    }
+                            .foregroundColor(overText ?.white:.yellow)
+                            .onTapGesture {
+                                overText.toggle()
+                            }
+                    }
                 }
                 Group {
                     Text("is your room between 60 to 67 degreed Farengeight when you are trying to sleep?")
@@ -75,11 +78,12 @@ struct Survey: View {
                         Text("YES")
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
-                                overText.toggle()
+                                overText.toggle()}
                         Text("NO")
-                                    .foregroundColor(overText ?.white:.yellow)
-                                    .onTapGesture {
-                                        overText.toggle()
+                            .foregroundColor(overText ?.white:.yellow)
+                            .onTapGesture {
+                                overText.toggle()
+                            }
                     }
                 }
                 Group {
@@ -90,10 +94,12 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                            }
                         Text("NO")
-                                    .foregroundColor(overText ?.white:.yellow)
-                                    .onTapGesture {
-                                        overText.toggle()
+                            .foregroundColor(overText ?.white:.yellow)
+                            .onTapGesture {
+                                overText.toggle()
+                            }
                     }
                 }
                 Group {
@@ -104,20 +110,21 @@ struct Survey: View {
                             .foregroundColor(overText ?.white:.yellow)
                             .onTapGesture {
                                 overText.toggle()
+                            }
                         Text("NO")
-                                    .foregroundColor(overText ?.white:.yellow)
-                                    .onTapGesture {
-                                        overText.toggle()
+                            .foregroundColor(overText ?.white:.yellow)
+                            .onTapGesture {
+                                overText.toggle()
+                            }
                     }
                 }
+                                        NavigationLink(destination: SleepTips()){
+                                            Text("Get Sleep Tips")
+                                        }
+                                        .foregroundColor(.yellow)
+                                        
+                                    }
+                                }
+                            }
+                        }
                     
-                NavigationLink(destination: SleepTips()){
-                    Text("Get Sleep Tips")
-                }
-                .foregroundColor(.yellow)
-                
-            }
-        }
-    }
-}
-
