@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct SleepGoal: View {
-    @State var Shours: String = ""
-    @State var Sminutes: String = ""
+    @Binding var Shours:String
+    @Binding var Sminutes:String
     var body: some View {
         VStack{
                     TextField("enter your wanted hours", text: $Shours)

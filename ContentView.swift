@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var Shours:String
-    @Binding var Sminutes:String
+    @State var Shours: String = UserDefaults.standard.string(forKey: "numberOfHours") ?? ""
+    @State var Sminutes: String = UserDefaults.standard.string(forKey: "numberOfMinutes") ?? ""
+   
     var body: some View {
         NavigationView {
             VStack(spacing: 40){
@@ -20,7 +21,7 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    NavigationLink(destination: SleepGoal()){
+                    NavigationLink(destination: SleepGoal(Shours: $Shours, Sminutes: $Sminutes)){
                         ZStack {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(.blue)
