@@ -9,9 +9,9 @@ import SwiftUI
 
 struct headerView: View {
     @Binding var items :[logItems]
-       @State var newItembedTime: String = ""
-       @State var newItemWakeupTime: String = ""
-    @State var newItemhoursSlept: String = ""
+       @State var newItembedTime: String = UserDefaults.standard.string(forKey: "bedTimeHours") ?? ""
+       @State var newItemWakeupTime: String = UserDefaults.standard.string(forKey: "wakeupHour") ?? ""
+    @State var newItemhoursSlept: String = UserDefaults.standard.string(forKey: "HoursSlept") ?? ""
     var body: some View {
         HStack{
                    TextField("wakeup time", text: $newItemWakeupTime)
@@ -30,6 +30,9 @@ struct headerView: View {
                        newItembedTime = ""
                        newItemWakeupTime = ""
                        newItemhoursSlept = ""
+                       UserDefaults.standard.string(forKey: "bedTimeHours")
+                       UserDefaults.standard.string(forKey: "wakeupHour")
+                       UserDefaults.standard.string(forKey: "HoursSlept")
                    }, label: {
                        Image(systemName: "plus.circle")
                            .font(.largeTitle)
