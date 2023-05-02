@@ -33,6 +33,7 @@ struct headerView: View {
                    }, label: {
                        Image(systemName: "plus.circle")
                            .font(.largeTitle)
+                           .foregroundColor(.blue)
                    })
                }
                .padding()
