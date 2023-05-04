@@ -9,38 +9,37 @@ import SwiftUI
 
 struct headerView: View {
     @Binding var items :[logItems]
-       @State var newItembedTime: String = UserDefaults.standard.string(forKey: "bedTimeHours") ?? ""
-       @State var newItemWakeupTime: String = UserDefaults.standard.string(forKey: "wakeupHour") ?? ""
-    @State var newItemhoursSlept: String = UserDefaults.standard.string(forKey: "HoursSlept") ?? ""
+    @Binding var newItembedTime:String
+    @Binding var newItemWakeupTime:String
+    @Binding var newItemhoursSlept:String
     var body: some View {
         HStack{
-                   TextField("wakeup time", text: $newItemWakeupTime)
-                      
-                      
-                   TextField("bed time", text: $newItembedTime)
-                       
+            TextField("wakeup time", text: $newItemWakeupTime)
+            
+            
+            TextField("bed time", text: $newItembedTime)
+            
             TextField("time slept", text: $newItemhoursSlept)
-              
             
             
-                   Button(action: {
-                      
-                       let newItem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemhoursSlept)
-                       items.append(newItem)
-                       newItembedTime = ""
-                       newItemWakeupTime = ""
-                       newItemhoursSlept = ""
-                       UserDefaults.standard.string(forKey: "bedTimeHours")
-                       UserDefaults.standard.string(forKey: "wakeupHour")
-                       UserDefaults.standard.string(forKey: "HoursSlept")
-                   }, label: {
-                       Image(systemName: "plus.circle")
-                           .font(.largeTitle)
-                           .foregroundColor(.blue)
-                   })
-               }
-               .padding()
-               .textFieldStyle(.roundedBorder)
+            
+            Button(action: {
+
+                let newItem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemhoursSlept)
+                items.append(newItem)
+//                newItembedTime = ""
+//                newItemWakeupTime = ""
+//                newItemhoursSlept = ""
+                
+            }, label: {
+                Image(systemName: "plus.circle")
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+            })
+        }
+        .padding()
+        .textFieldStyle(.roundedBorder)
+        
     }
 }
 
