@@ -4,10 +4,10 @@ struct ContentView: View {
     @State var Shours: String = UserDefaults.standard.string(forKey: "numberOfHours") ?? ""
     @State var Sminutes: String = UserDefaults.standard.string(forKey: "numberOfMinutes") ?? ""
     @State var age: Int = UserDefaults.standard.integer(forKey: "age")
-    @State var hoursNeeded: String
     @State var newItembedTime: String = ""
     @State var newItemWakeupTime: String = ""
     @State var newItemhoursSlept: String = ""
+    @State var hoursNeeded: String = ""
    
 
     var body: some View {
