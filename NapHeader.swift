@@ -8,43 +8,30 @@
 import Foundation
 import SwiftUI
 
-    struct HeaderView: View {
-        //@State var save = UserDefaults.standard.string(forKey: "Assinment")
-        
-        @State var Class: String = ""
-        @State var Description: String = ""
-        @State private var overText = false
-        @Binding var items: [Assinment]
-        var body: some View {
-            VStack{
-                
-                HStack{
-                    TextField("Class", text: $Class)
-                        .frame(width: 150)
-                        .foregroundColor(.indigo)
-                   .font(.system(size:15, weight: .bold, design: .serif))
-                    
-                    TextField("Description", text: $Description)
-                        .frame(width: 150)
-                        .foregroundColor(.indigo)
-                    .font(.system(size:15, weight: .bold, design: .serif))
-                   
-                    
-                    Button(action: {
-                        let newItem = Assinment (name: Class, description: Description)
-                        items.append(newItem)
-                        Class = ""
-                        Description = ""
-                       // UserDefaults.standard.set(save, forKey: "Assinment")
-                    }, label: {
-                        Image(systemName: "plus.circle")
-                            .font(.largeTitle)
-                    })
-                }
-                Text("Click assinment when done")
-                    .font(.caption)
+struct NapHeader: View {
+    @State var NewItemName: String = ""
+    @State var NewItemQuantity: Int?
+    @State private var overText = false
+    @Binding var items: [ANap]
+    var body: some View {
+        HStack{
+            TextField("Enter QUANTITY", value: $NewItemQuantity, format: .number)
+                .foregroundColor(.purple)
+
+            Button(action: {
+                guard let unwrappedQuantity = NewItemQuantity else {
+                    return }
+                let newItem = ANap(minutes: unwrappedQuantity)
+                items.append(newItem)
+                NewItemQuantity = nil
+            }, label: {
+
+                Image(systemName: "plus.circle")
+                    .font(.largeTitle)
+            })
+        }
+        .padding()
+        .textFieldStyle(.roundedBorder)
             }
-            .padding()
-            .textFieldStyle(.roundedBorder)
-                }
 }
+

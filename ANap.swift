@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct Assinment: Hashable {
-    var name: String
-    var description: String
+struct ANap: Hashable {
+    var minutes: Int
 }
