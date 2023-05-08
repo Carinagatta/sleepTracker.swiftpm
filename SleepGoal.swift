@@ -48,6 +48,7 @@ struct SleepGoal: View {
                 Text(" hours of sleep per night.")
             }
         }
+        
     }
 }
 

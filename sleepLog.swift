@@ -24,7 +24,7 @@ struct sleepLog: View {
             
             List{
                
-               Text("Sleep goal \(Shours) hours and \(Sminutes) minutes")
+               Text("Sleep goal: \(Shours) hours and \(Sminutes) minutes")
                                         .italic()
                                         .foregroundColor(.white)
                                         .font(.title)
@@ -58,8 +58,10 @@ struct sleepLog: View {
             
                        })
     })
+        .navigationViewStyle(.stack)
         
     }
+        
     func removeItems(at offests: IndexSet){
         items.remove(atOffsets: offests)
     }
