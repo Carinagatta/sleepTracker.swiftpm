@@ -40,7 +40,7 @@ struct SleepGoal: View {
                     Text("Hours\(Shours)")
                     Text("Minutes\(Shours)")
             Text("")
-            Text("Since you are " + age + " years old, you need " + hoursNeeded + " of sleep per night.")
+            Text("Since you are " + age + " years old, you need " + hoursNeeded + " hours of sleep per night.")
         }
     }
 }
