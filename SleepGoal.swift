@@ -35,12 +35,18 @@ struct SleepGoal: View {
     }
     var body: some View {
         VStack{
-                    TextField("enter your wanted hours", text: $Shours)
-                    TextField("enter your wanted minutes", text: $Sminutes)
-                    Text("Hours\(Shours)")
-                    Text("Minutes\(Shours)")
+            TextField("Enter your wanted hours", text: $Shours)
+            TextField("Enter your wanted minutes", text: $Sminutes)
+            Text("Hours\(Shours)")
+            Text("Minutes\(Shours)")
             Text("")
-            Text("Since you are " + age + " years old, you need " + hoursNeeded + " hours of sleep per night.")
+            HStack {
+                Text("Since you are ")
+                Text("\(age)")
+                Text(" years old, you need ")
+                Text("\(hoursNeeded)")
+                Text(" hours of sleep per night.")
+            }
         }
     }
 }
