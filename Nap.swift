@@ -28,7 +28,7 @@ struct Nap: View {
              .toolbar(content: {
                  
                 ToolbarItem(placement: .navigation){
-                    NapHeader(items: $items)
+//                    NapHeader(items: $items)
                 }
                   
             })
