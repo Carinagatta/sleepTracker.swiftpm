@@ -17,9 +17,7 @@ struct NapList: View {
             Text("Minutes: \(currentitem.minutes)")
                 .font(.title3)
                 .foregroundColor(overText ?.pink:.indigo)
-                .onHover{ over in
-                    overText = over
-                }
+                
         }
     }
 }
