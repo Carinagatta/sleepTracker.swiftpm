@@ -11,12 +11,36 @@ import SwiftUI
 struct SleepGoal: View {
     @Binding var Shours:String
     @Binding var Sminutes:String
+    @Binding var age: Int
+    @Binding var hoursNeeded: String
+    func determineHours() {
+        if age < 1 {
+            hoursNeeded = "12 - 17"
+        }
+        else if age < 3 {
+            hoursNeeded = "11 - 14"
+        }
+        else if age < 6 {
+            hoursNeeded = "10 - 13"
+        }
+        else if age < 13 {
+            hoursNeeded = "9 - 12"
+        }
+        else if age < 18 {
+            hoursNeeded = "8 - 10"
+        }
+        else {
+            hoursNeeded = "7 - 9"
+        }
+    }
     var body: some View {
         VStack{
                     TextField("enter your wanted hours", text: $Shours)
                     TextField("enter your wanted minutes", text: $Sminutes)
                     Text("Hours\(Shours)")
                     Text("Minutes\(Shours)")
+            Text("")
+            Text("Since you are " + age + " years old, you need " + hoursNeeded + " hours of sleep per night.")
         }
     }
 }
