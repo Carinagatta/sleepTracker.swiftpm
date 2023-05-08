@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct sleepLog: View {
-    @State var items: [logItems] = []
+    @State var items: [logItems] = sleepManager().getitems()
     @Binding var Shours:String
     @Binding var Sminutes:String
+    @Binding var newItembedTime:String
+    @Binding var newItemWakeupTime:String
+    @Binding var newItemhoursSlept:String
+
     var body: some View {
         NavigationView(content: {
             
@@ -19,8 +23,8 @@ struct sleepLog: View {
             
             
             List{
-                
-               Text("Sleep log:           Sleep goal\(Shours) hours and\(Sminutes) minutes")
+               
+               Text("Sleep goal \(Shours) hours and \(Sminutes) minutes")
                                         .italic()
                                         .foregroundColor(.white)
                                         .font(.title)
@@ -29,13 +33,16 @@ struct sleepLog: View {
                 ForEach(items, id:\.self) { currentitem in
                     
                     logView(currentitem: currentitem)
-                    
-                    
+                   
                         .listRowBackground(Color.blue.opacity(0.9))
                 }
-                
+               
                 .onDelete(perform: { indexSet in
-                    removeItems(at: indexSet)
+//                    removeItems(at: indexSet)
+                    if let index = indexSet.first {
+                        self.items.remove(at: index)
+                        }
+                    sleepManager().setitems(logitem: items)
                 })
             }
             
@@ -43,9 +50,13 @@ struct sleepLog: View {
             
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
-                    headerView(items: $items)
+                    headerView(items: $items,newItembedTime: $newItembedTime,newItemWakeupTime: $newItemWakeupTime, newItemhoursSlept: $newItemhoursSlept)
                 }
             }
+            .onAppear(perform: {
+                items = sleepManager().getitems()
+            
+                       })
     })
         
     }
