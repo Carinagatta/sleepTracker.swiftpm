@@ -25,11 +25,11 @@ struct headerView: View {
             
             Button(action: {
 
-                let newItem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemhoursSlept)
-                items.append(newItem)
-//                newItembedTime = ""
-//                newItemWakeupTime = ""
-//                newItemhoursSlept = ""
+                let newitem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemhoursSlept)
+              
+                updateArray()
+
+                
                 
             }, label: {
                 Image(systemName: "plus.circle")
@@ -41,5 +41,17 @@ struct headerView: View {
         .textFieldStyle(.roundedBorder)
         
     }
+    func updateArray() {
+          let newitem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemWakeupTime)
+          items.append(newitem)
+          
+        sleepManager().setitems(items: items)
+          
+          newItembedTime = ""
+        newItemhoursSlept = ""
+        newItemWakeupTime = ""
+          
+          
+      }
 }
 

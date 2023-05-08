@@ -15,9 +15,10 @@ struct SleepGoal: View {
         VStack{
                     TextField("enter your wanted hours", text: $Shours)
                     TextField("enter your wanted minutes", text: $Sminutes)
-                    Text("Hours\(Shours)")
-                    Text("Minutes\(Shours)")
+                    Text("Hours \(Shours)")
+                    Text("Minutes \(Shours)")
         }
+        
     }
 }
 
