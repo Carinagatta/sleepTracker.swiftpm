@@ -9,34 +9,20 @@ import Foundation
 import SwiftUI
 
 struct Nap: View {
-    @State var items: [Assinment] = []
-   // @AppStorage("woo") var SaveList = ""
+    @State var items: [ANap] = []
+    
     var body: some View {
-        
         NavigationView{
             
-            List{
-                ForEach(items, id: \.self) { currentitem in
-                    NapList(currentitem: currentitem)
-                }
-                .onDelete { offsets in
-                    items.remove(atOffsets: offsets)
-                }
+            List(items, id: \.self) { currentitem in
+                NapList(currentitem: currentitem)
             }
-            
-            .background(Color.black)
-             .toolbar(content: {
-                 
+            .toolbar(content: {
                 ToolbarItem(placement: .navigation){
-                    NapHeader(items: $items)
+//                    NapHeader(items: $items)
                 }
-                  
             })
         }
-        .foregroundColor(.cyan)
-       
-    }
-    func removeItems(at offsets: IndexSet) {
-        items.remove(atOffsets: offsets)
     }
 }
+    

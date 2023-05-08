@@ -33,16 +33,16 @@ struct sleepLog: View {
                 ForEach(items, id:\.self) { currentitem in
                     
                     logView(currentitem: currentitem)
-                   
+                    
                         .listRowBackground(Color.blue.opacity(0.9))
                 }
                
-                .onDelete(perform: { indexSet in
+                .onDelete(perform: { (indexSet) in
 //                    removeItems(at: indexSet)
                     if let index = indexSet.first {
                         self.items.remove(at: index)
                         }
-                    sleepManager().setitems(logitem: items)
+                    sleepManager().setitems(items: items)
                 })
             }
             

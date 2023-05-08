@@ -9,26 +9,17 @@ import Foundation
 import SwiftUI
 
 struct NapList: View {
-    let currentitem: Assinment
-   // @AppStorage("save") var currentitem.name = ""
+    let currentitem: ANap
     @State private var overText = false
-    @State private var didTap: Bool = false
     var body: some View {
-        VStack(alignment: .leading) {
-            
-            Text(currentitem.name)
-                .font(.system(size:35, weight: .bold, design: .serif))
-                .foregroundColor(overText ?.cyan:.indigo)
-                .onTapGesture {
-                    overText.toggle()
+        VStack (alignment: .leading) {
+           
+            Text("Minutes: \(currentitem.minutes)")
+                .font(.title3)
+                .foregroundColor(overText ?.pink:.indigo)
+                .onHover{ over in
+                    overText = over
                 }
-            
-        
-        Text("Description: \(currentitem.description)")
-            .font(.system(size:15, weight: .bold, design: .serif))
-            .font(.title3)
-            .foregroundColor(overText ?.cyan:.indigo)
-        
-    }
         }
+    }
 }
