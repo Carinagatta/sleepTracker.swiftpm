@@ -32,6 +32,7 @@ struct NapHeader: View {
         }
         .padding()
         .textFieldStyle(.roundedBorder)
+        
             }
 }
 

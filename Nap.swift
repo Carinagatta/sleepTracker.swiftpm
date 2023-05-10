@@ -22,6 +22,7 @@ struct Nap: View {
                     NapHeader(items: $items)
                 }
             })
+            
         }
         .navigationViewStyle(.stack)
     }

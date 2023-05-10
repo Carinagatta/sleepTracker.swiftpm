@@ -19,5 +19,7 @@ struct NapList: View {
                 .foregroundColor(overText ?.pink:.indigo)
                 
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
     }
 }

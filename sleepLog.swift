@@ -14,55 +14,58 @@ struct sleepLog: View {
     @Binding var newItembedTime:String
     @Binding var newItemWakeupTime:String
     @Binding var newItemhoursSlept:String
-
-    var body: some View {
-        NavigationView(content: {
-            
     
-            
-            
-            
-            List{
-               
-               Text("Sleep goal: \(Shours) hours and \(Sminutes) minutes")
-                                        .italic()
-                                        .foregroundColor(.white)
-                                        .font(.title)
-                                        .listRowBackground(Color.blue)
+    var body: some View {
+
+            NavigationView(content: {
                 
-                ForEach(items, id:\.self) { currentitem in
+                
+                
+                
+                List{
                     
-                    logView(currentitem: currentitem)
+                    Text("Sleep goal: \(Shours) hours and \(Sminutes) minutes")
+                        .italic()
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .listRowBackground(Color.blue)
                     
-                        .listRowBackground(Color.blue.opacity(0.9))
-                }
-               
-                .onDelete(perform: { (indexSet) in
-//                    removeItems(at: indexSet)
-                    if let index = indexSet.first {
-                        self.items.remove(at: index)
+                    ForEach(items, id:\.self) { currentitem in
+                        
+                        logView(currentitem: currentitem)
+                        
+                            .listRowBackground(Color.blue.opacity(0.9))
+                    }
+                    
+                    .onDelete(perform: { (indexSet) in
+                        //                    removeItems(at: indexSet)
+                        if let index = indexSet.first {
+                            self.items.remove(at: index)
                         }
-                    sleepManager().setitems(items: items)
-                })
-            }
-            .background(Color.black)
-           
-            
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    headerView(items: $items,newItembedTime: $newItembedTime,newItemWakeupTime: $newItemWakeupTime, newItemhoursSlept: $newItemhoursSlept)
+                        sleepManager().setitems(items: items)
+                    })
                 }
-            }
-            .onAppear(perform: {
-                items = sleepManager().getitems()
-            
-                       })
-    })
-        .navigationViewStyle(.stack)
-        .background(Color.black)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                
+                
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
+                        headerView(items: $items,newItembedTime: $newItembedTime,newItemWakeupTime: $newItemWakeupTime, newItemhoursSlept: $newItemhoursSlept)
+                    }
+                }
+                .onAppear(perform: {
+                    items = sleepManager().getitems()
+                    
+                })
+                
+            })
+            .navigationViewStyle(.stack)
+            .background(Color.black)
+
         
     }
-        
+    
     func removeItems(at offests: IndexSet){
         items.remove(atOffsets: offests)
     }
