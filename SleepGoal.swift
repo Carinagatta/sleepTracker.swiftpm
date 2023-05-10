@@ -9,28 +9,28 @@ import Foundation
 import SwiftUI
 
 struct SleepGoal: View {
-    @Binding var Shours:String
-    @Binding var Sminutes:String
+    @Binding var Shours:  String
+    @Binding var Sminutes: String
     @Binding var age: Int
     @Binding var hoursNeeded: String
-    func determineHours() {
+    func determineHours(currentAge: Int){
         if age < 1 {
-            hoursNeeded = "12 - 17"
+            let hoursNeeded = "12 - 17"
         }
         else if age < 3 {
-            hoursNeeded = "11 - 14"
+            let hoursNeeded = "11 - 14"
         }
         else if age < 6 {
-            hoursNeeded = "10 - 13"
+            let hoursNeeded = "10 - 13"
         }
         else if age < 13 {
-            hoursNeeded = "9 - 12"
+            let hoursNeeded = "9 - 12"
         }
         else if age < 18 {
-            hoursNeeded = "8 - 10"
+            let hoursNeeded = "8 - 10"
         }
         else {
-            hoursNeeded = "7 - 9"
+            let hoursNeeded = "7 - 9"
         }
     }
     var body: some View {
@@ -42,15 +42,19 @@ struct SleepGoal: View {
             Text("Hours: \(Shours)")
             Text("Minutes: \(Shours)")
             Text("")
-            HStack {
-                Text("Since you are ")
+            Button {
+                determineHours(currentAge: age)
+            } label: {
+                Text("Determine how much sleep you need")
+            }
+            HStack(spacing: 10) {
+                Text("Since you are")
                 Text("\(age)")
-                Text(" years old, you need ")
+                Text("years old, you need")
                 Text("\(hoursNeeded)")
-                Text(" hours of sleep per night.")
+                Text("hours of sleep per night.")
             }
         }
-        
     }
 }
 

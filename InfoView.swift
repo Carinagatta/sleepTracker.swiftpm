@@ -22,12 +22,14 @@ struct InfoView: View {
         TextField("age", value: $age, format: .number)
             .textFieldStyle(.roundedBorder)
             .frame(width: 200, height: 10)
-        Spacer()
+        Text("")
+        Text("")
         Button {
             UserDefaults.standard.set(name, forKey: "name")
             UserDefaults.standard.set(age, forKey: "age")
         } label: {
             Text("Save")
+                .foregroundColor(.blue)
         }
         
     }
