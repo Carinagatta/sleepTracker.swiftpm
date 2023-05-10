@@ -64,7 +64,10 @@ struct ContentView: View {
                         .foregroundColor(.blue)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black)
         }
         .navigationViewStyle(.stack)
+      
     }
 }

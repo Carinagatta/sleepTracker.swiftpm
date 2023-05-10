@@ -45,7 +45,7 @@ struct sleepLog: View {
                     sleepManager().setitems(items: items)
                 })
             }
-            
+            .background(Color.black)
            
             
             .toolbar {
@@ -59,6 +59,7 @@ struct sleepLog: View {
                        })
     })
         .navigationViewStyle(.stack)
+        .background(Color.black)
         
     }
         

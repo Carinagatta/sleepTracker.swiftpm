@@ -23,6 +23,7 @@ struct Nap: View {
                 }
             })
         }
+        .navigationViewStyle(.stack)
     }
 }
     

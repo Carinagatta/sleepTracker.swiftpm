@@ -13,11 +13,11 @@ struct logView: View {
     var body: some View {
           
                 HStack{
-                    Text("bed time\(currentitem.bedTime)")
+                    Text("Bed Time: \(currentitem.bedTime)")
                         .font(.title3)
-                    Text("wakeup Time: \(currentitem.wakeupTime)")
+                    Text("Wakeup Time: \(currentitem.wakeupTime)")
                         .font(.title3)
-                    Text("hours slep: \(currentitem.hoursSlept)")
+                    Text("Hours slept: \(currentitem.hoursSlept)")
                         .font(.title3)
                 }
             }

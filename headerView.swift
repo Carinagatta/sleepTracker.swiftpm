@@ -14,21 +14,20 @@ struct headerView: View {
     @Binding var newItemhoursSlept:String
     var body: some View {
         HStack{
-            TextField("wakeup time", text: $newItemWakeupTime)
+            TextField("Wakeup Time", text: $newItemWakeupTime)
             
             
-            TextField("bed time", text: $newItembedTime)
+            TextField("Bed Time", text: $newItembedTime)
             
-            TextField("time slept", text: $newItemhoursSlept)
+            TextField("Time Slept", text: $newItemhoursSlept)
             
             
             
             Button(action: {
 
-                let newitem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemhoursSlept)
-              
-                updateArray()
-
+//                let newItem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemhoursSlept)
+                    updateArray()
+                
                 
                 
             }, label: {
