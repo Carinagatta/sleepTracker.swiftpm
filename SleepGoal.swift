@@ -34,28 +34,53 @@ struct SleepGoal: View {
         }
     }
     var body: some View {
-        VStack{
-            TextField("Enter your wanted hours", text: $Shours)
-                .padding()
-            TextField("Enter your wanted minutes", text: $Sminutes)
-                .padding()
-            Text("Hours: \(Shours)")
-            Text("Minutes: \(Shours)")
-            Text("")
-            Button {
-                determineHours(currentAge: age)
-            } label: {
-                Text("Determine how much sleep you need")
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            VStack{
+                HStack{
+                    Text("Hours: \(Shours)")
+                        .font(.title)
+                        .font(.system(size: 60))
+                    Text("Minutes: \(Sminutes)")
+                    .font(.title)
+                    .font(.system(size: 60))
+                }
+                TextField("  Enter your wanted hours", text: $Shours)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .font(.title)
+                    .frame(width: 400)
+                    .font(.system(size: 60))
+                    .padding()
+                TextField("  Enter your wanted minutes", text: $Sminutes)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .font(.title)
+                    .frame(width: 400, height: 20)
+                    .padding()
+               
+                Button {
+                    determineHours(currentAge: age)
+                } label: {
+                    Text("Determine how much sleep you need")
+                        .frame(width: 400, height: 20)
+                        .background(Color.white.opacity(20))
+                        .foregroundColor(.black)
+                }
+                HStack(spacing: 10) {
+                    Text("Since you are")
+                    Text("\(age)")
+                    Text("years old, you need")
+                    Text("\(hoursNeeded)")
+                    Text("hours of sleep per night.")
+                }
+                
             }
-            HStack(spacing: 10) {
-                Text("Since you are")
-                Text("\(age)")
-                Text("years old, you need")
-                Text("\(hoursNeeded)")
-                Text("hours of sleep per night.")
-            }
+            .foregroundColor(.white)
+           
         }
-    }
+            }
 }
 
 

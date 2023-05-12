@@ -68,6 +68,8 @@ struct ContentView: View {
             .background(Color.black)
         }
         .navigationViewStyle(.stack)
+        
+
       
     }
 }

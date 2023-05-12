@@ -24,12 +24,12 @@ struct Survey: View {
         
     var body: some View {
         ZStack{
-            Rectangle()
-                .foregroundColor(.black)
+                Color.black
+                    .ignoresSafeArea()
             VStack{
                 ZStack{
                     Rectangle()
-                        .foregroundColor(.indigo)
+                        .foregroundColor(.blue)
                         .frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
                     Text("Sleep Survey")
                         .foregroundColor(.white)
@@ -42,13 +42,17 @@ struct Survey: View {
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .foregroundColor(overText1 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText1 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText1.toggle()
                                 
                             }
                         Text("NO")
-                            .foregroundColor(overText2 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText2 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText2.toggle()
                                 
@@ -63,7 +67,9 @@ struct Survey: View {
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .foregroundColor(overText3 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText3 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText3.toggle()
                             }
@@ -84,13 +90,17 @@ struct Survey: View {
                     HStack{
                         
                         Text("YES")
-                            .foregroundColor(overText5 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText5 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText5.toggle()
                                 
                             }
                         Text("NO")
-                            .foregroundColor(overText6 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText6 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText6.toggle()
                             }
@@ -105,11 +115,15 @@ struct Survey: View {
                     HStack{
                         
                         Text("YES")
-                            .foregroundColor(overText7 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText7 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText7.toggle()}
                         Text("NO")
-                            .foregroundColor(overText8 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText8 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText8.toggle()
                                 
@@ -124,13 +138,17 @@ struct Survey: View {
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .foregroundColor(overText9 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText9 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText9.toggle()
-                                
+                                    
                             }
                         Text("NO")
-                            .foregroundColor(overText10 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText10 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText10.toggle()
                             }
@@ -144,22 +162,26 @@ struct Survey: View {
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .foregroundColor(overText11 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText11 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText11.toggle()
                             }
                         Text("NO")
-                            .foregroundColor(overText12 ?.yellow:.white)
+                            .frame(width: 40, height: 20)
+                            .background(overText12 ?.blue:.black)
+                            .foregroundColor(.white)
                             .onTapGesture {
                                 overText12.toggle()
-                                
+                                    
                             }
                     }
                 }
                 NavigationLink(destination: SleepTips()){
                                             Text("Get Sleep Tips")
                         .font(.title2)
-                        .foregroundColor(.indigo)
+                        .foregroundColor(.blue)
                         .frame(width: 500, height: 100)
                        
                                         }
