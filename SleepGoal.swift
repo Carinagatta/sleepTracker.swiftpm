@@ -12,25 +12,25 @@ struct SleepGoal: View {
     @Binding var Shours:  String
     @Binding var Sminutes: String
     @Binding var age: Int
-    @Binding var hoursNeeded: String
+    @State var hoursNeeded: String = ""
     func determineHours(currentAge: Int){
         if age < 1 {
-            let hoursNeeded = "12 - 17"
+            hoursNeeded = "12 - 17"
         }
         else if age < 3 {
-            let hoursNeeded = "11 - 14"
+            hoursNeeded = "11 - 14"
         }
         else if age < 6 {
-            let hoursNeeded = "10 - 13"
+            hoursNeeded = "10 - 13"
         }
         else if age < 13 {
-            let hoursNeeded = "9 - 12"
+            hoursNeeded = "9 - 12"
         }
         else if age < 18 {
-            let hoursNeeded = "8 - 10"
+            hoursNeeded = "8 - 10"
         }
         else {
-            let hoursNeeded = "7 - 9"
+            hoursNeeded = "7 - 9"
         }
     }
     var body: some View {
@@ -43,6 +43,20 @@ struct SleepGoal: View {
                         .font(.title)
                         .font(.system(size: 60))
                     Text("Minutes: \(Sminutes)")
+                        .font(.title)
+                        .font(.system(size: 60))
+                }
+                TextField("  Enter your wanted hours", text: $Shours)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .font(.title)
+                    .frame(width: 400)
+                    .font(.system(size: 60))
+                    .padding()
+                    .foregroundColor(.white)
+                TextField("  Enter your wanted minutes", text: $Sminutes)
+                    .background(Color.blue)
+                    .cornerRadius(10)
                     .font(.title)
                     .font(.system(size: 60))
                 }
@@ -84,7 +98,5 @@ struct SleepGoal: View {
             .foregroundColor(.white)
             .scaleEffect(1.5)
         }
-            }
+    }
 }
-
-
