@@ -53,34 +53,41 @@ struct SleepGoal: View {
                     .frame(width: 400)
                     .font(.system(size: 60))
                     .padding()
+                    .foregroundColor(.white)
                 TextField("  Enter your wanted minutes", text: $Sminutes)
                     .background(Color.blue)
                     .cornerRadius(10)
                     .font(.title)
                     .frame(width: 400, height: 20)
                     .padding()
+                    .foregroundColor(.white)
                 Spacer()
                 Button {
                     determineHours(currentAge: age)
                 } label: {
-                    Text("Determine how much sleep you need")
-                        .frame(width: 400, height: 20)
-                        .background(Color.white.opacity(20))
-                        .foregroundColor(.black)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 25, style: .continuous)
+                            .fill(.blue)
+                            .frame(width: 400, height: 80)
+                        Text("Determine how much sleep you need")
+                            .foregroundColor(.white)
+                            .font(.title2)
+                    }
                 }
-                HStack(spacing: 0) {
-                    Text("Since you are ")
-                    Text("\(age)")
-                    Text(" years old, you need ")
-                    Text("\(hoursNeeded)")
-                    Text(" hours of sleep per night.")
+                Text("")
+                Group {
+                    HStack(spacing: 0) {
+                        Text("Since you are ")
+                        Text("\(age)")
+                        Text(" years old, you need ")
+                        Text("\(hoursNeeded)")
+                        Text(" hours of sleep per night.")
+                    }
                 }
-                
+                .font(.title)
             }
             .foregroundColor(.white)
             
         }
     }
 }
-
-

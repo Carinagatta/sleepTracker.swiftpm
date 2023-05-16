@@ -74,9 +74,11 @@ struct Survey: View {
                                 overText3.toggle()
                             }
                         Text("NO")
-                                    .foregroundColor(overText4 ?.yellow:.white)
-                                    .onTapGesture {
-                                        overText4.toggle()
+                            .frame(width: 40, height: 20)
+                            .background(overText4 ?.blue:.black)
+                            .foregroundColor(.white)
+                            .onTapGesture {
+                                overText4.toggle()
                                         
                                     }
                     }
