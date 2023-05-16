@@ -46,7 +46,7 @@ struct sleepLog: View {
                     })
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                
+               
                 
                 
                 .toolbar {

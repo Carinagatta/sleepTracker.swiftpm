@@ -24,6 +24,7 @@ struct NapHeader: View {
                 let newItem = ANap(minutes: unwrappedQuantity)
                 items.append(newItem)
                 NewItemQuantity = nil
+                
             }, label: {
 
                 Image(systemName: "plus.circle")

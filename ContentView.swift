@@ -66,6 +66,7 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.black)
+            .scaleEffect(1.5)
         }
         .navigationViewStyle(.stack)
         

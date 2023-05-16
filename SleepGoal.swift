@@ -46,20 +46,23 @@ struct SleepGoal: View {
                     .font(.title)
                     .font(.system(size: 60))
                 }
-                TextField("  Enter your wanted hours", text: $Shours)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .font(.title)
-                    .frame(width: 400)
-                    .font(.system(size: 60))
-                    .padding()
-                TextField("  Enter your wanted minutes", text: $Sminutes)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .font(.title)
-                    .frame(width: 400, height: 20)
-                    .padding()
-               
+                HStack{
+                    TextField(" Hours wanted", text: $Shours)
+                        .font(.title)
+                        .frame(width: 200, height: 200)
+                        .background(Color.blue)
+                        .cornerRadius(20)
+                        .font(.system(size: 60))
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    TextField(" Minutes wanted", text: $Sminutes)
+                        .font(.title)
+                        .frame(width: 200, height: 200)
+                        .background(Color.blue)
+                        .cornerRadius(20)
+                        .padding()
+                        .multilineTextAlignment(.center)
+                }
                 Button {
                     determineHours(currentAge: age)
                 } label: {
@@ -67,6 +70,7 @@ struct SleepGoal: View {
                         .frame(width: 400, height: 20)
                         .background(Color.white.opacity(20))
                         .foregroundColor(.black)
+                        .cornerRadius(15)
                 }
                 HStack(spacing: 10) {
                     Text("Since you are")
@@ -78,7 +82,7 @@ struct SleepGoal: View {
                 
             }
             .foregroundColor(.white)
-           
+            .scaleEffect(1.5)
         }
             }
 }
