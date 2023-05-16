@@ -8,7 +8,6 @@ struct ContentView: View {
     @State var newItemWakeupTime: String = ""
     @State var newItemhoursSlept: String = ""
     @State var hoursNeeded: String = ""
-   
 
     var body: some View {
         NavigationView {
@@ -27,7 +26,7 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    NavigationLink(destination: SleepGoal(Shours: $Shours, Sminutes: $Sminutes, age: $age, hoursNeeded: $hoursNeeded)){
+                    NavigationLink(destination: SleepGoal(Shours: $Shours, Sminutes: $Sminutes, age: $age, hoursNeeded: hoursNeeded)){
                         ZStack {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(.blue)
