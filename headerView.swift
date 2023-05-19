@@ -38,7 +38,7 @@ struct headerView: View {
         }
         .padding()
         .textFieldStyle(.roundedBorder)
-        
+       
     }
     func updateArray() {
           let newitem = logItems(bedTime: newItembedTime, wakeupTime: newItemWakeupTime, hoursSlept: newItemWakeupTime)

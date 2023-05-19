@@ -23,7 +23,7 @@ struct NapHeader: View {
 //                    return }
                 let newItem = ANap(minutes: NewItemQuantity)
                 items.append(newItem)
-//                NewItemQuantity = nil
+                NewItemQuantity = nil
                 
                 updateArray()
             }, label: {

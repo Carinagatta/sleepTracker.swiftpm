@@ -28,7 +28,7 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    NavigationLink(destination: SleepGoal(Shours: $Shours, Sminutes: $Sminutes, age: $age, hoursNeeded: $hoursNeeded)){
+                    NavigationLink(destination: SleepGoal(Shours: $Shours, Sminutes: $Sminutes, age: $age, hoursNeeded: hoursNeeded)){
                         ZStack {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(.blue)
@@ -67,6 +67,7 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.black)
+            .scaleEffect(1.5)
         }
         .navigationViewStyle(.stack)
         
