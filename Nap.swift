@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Nap: View {
-    @State var items: [ANap] = []
+    @Binding var items: [ANap] 
     
     var body: some View {
         NavigationView{
@@ -19,7 +19,7 @@ struct Nap: View {
             }
             .toolbar(content: {
                 ToolbarItem(placement: .navigation){
-                    NapHeader(items: $items)
+                    NapHeader(NewItemQuantity: <#T##Binding<String>#>, items: <#T##Binding<[ANap]>#>)
                 }
             })
             
