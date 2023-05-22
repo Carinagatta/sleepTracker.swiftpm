@@ -13,6 +13,7 @@ struct SleepGoal: View {
     @Binding var Sminutes: String
     @Binding var age: Int
     @State var hoursNeeded: String = ""
+   
     func determineHours(currentAge: Int){
         if age < 1 {
             hoursNeeded = "12 - 17"
@@ -34,69 +35,81 @@ struct SleepGoal: View {
         }
     }
     var body: some View {
-        ZStack {
-            Color.black
-                .ignoresSafeArea()
-            VStack{
-                HStack{
-                    Text("Hours: \(Shours)")
-                        .font(.title)
-                        .font(.system(size: 60))
-                    Text("Minutes: \(Sminutes)")
-                        .font(.title)
-                        .font(.system(size: 60))
-                }
-                TextField("  Enter your wanted hours", text: $Shours)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .font(.title)
-                    .frame(width: 400)
-                    .font(.system(size: 60))
-                    .padding()
-                    .foregroundColor(.white)
-                TextField("  Enter your wanted minutes", text: $Sminutes)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .font(.title)
-                    .font(.system(size: 60))
-                }
-                HStack{
-                    TextField(" Hours wanted", text: $Shours)
-                        .font(.title)
-                        .frame(width: 200, height: 200)
-                        .background(Color.blue)
-                        .cornerRadius(20)
-                        .font(.system(size: 60))
-                        .padding()
-                        .multilineTextAlignment(.center)
-                    TextField(" Minutes wanted", text: $Sminutes)
-                        .font(.title)
-                        .frame(width: 200, height: 200)
-                        .background(Color.blue)
-                        .cornerRadius(20)
-                        .padding()
-                        .multilineTextAlignment(.center)
-                }
-                Button {
-                    determineHours(currentAge: age)
-                } label: {
-                    Text("Determine how much sleep you need")
-                        .frame(width: 400, height: 20)
-                        .background(Color.white.opacity(20))
-                        .foregroundColor(.black)
-                        .cornerRadius(15)
-                }
-                HStack(spacing: 10) {
-                    Text("Since you are")
-                    Text("\(age)")
-                    Text("years old, you need")
-                    Text("\(hoursNeeded)")
-                    Text("hours of sleep per night.")
-                }
+        
+        
+        VStack{
+            
+            Text("Goal")
+                .font(.system(size: 90))
+                .shadow(radius: 10)
+                .offset(y:-200)
+            Text("Enter the Amount of hours and Minutes you Want to Sleep")
+                .font(.system(size: 30))
+                .offset(y:-190)
+            Text("------------------------------------------------------------")
+                .offset(y:-180)
+
+            HStack{
+                Text(" You want \(Shours) hours and")
+                //                    .font(.title)
+                
+                Text("\(Sminutes) minutes")
+                //                    .font(.title)
                 
             }
+            .font(.system(size: 50))
+            .offset(y: -140)
+            
+            HStack{
+                TextField("H", text: $Shours)
+                //                    .font(.title)
+                    .frame(width: 200, height: 200)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                //                    .font(.system(size: 60))
+                    .padding()
+                    .multilineTextAlignment(.center)
+                TextField("M", text: $Sminutes)
+                //                    .font(.title)
+                    .frame(width: 200, height: 200)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                    .padding()
+                    .multilineTextAlignment(.center)
+            }
+            .font(.system(size: 80))
+            .offset(y: -120)
+            
+            Button {
+                determineHours(currentAge: age)
+            } label: {
+                Text("Determine how much sleep I should get")
+                    .frame(width: 600, height: 28)
+                    .background(Color.white.opacity(20))
+                    .foregroundColor(.black)
+                    .cornerRadius(15)
+                    .font(.system(size: 30))
+            }
+            .offset(y: -105)
+            VStack(spacing: 10) {
+                Text("Since you are \(age) years old")
+                    .offset(y:130)
+                    .font(.title)
+                Text("you need \(hoursNeeded) hours of sleep per night")
+                    .offset(y:130)
+                    .font(.title)
+            }
+            .offset(y: -90)
+            
+            
             .foregroundColor(.white)
             .scaleEffect(1.5)
         }
+        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
+        .foregroundColor(.white)
+    }
+    
     }
 
