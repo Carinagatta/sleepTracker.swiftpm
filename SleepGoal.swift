@@ -99,4 +99,4 @@ struct SleepGoal: View {
             .scaleEffect(1.5)
         }
     }
-}
+
