@@ -8,8 +8,8 @@ struct ContentView: View {
     @State var newItemWakeupTime: String = ""
     @State var newItemhoursSlept: String = ""
     @State var hoursNeeded: String = ""
-    @State var NewItemQuantity: String = ""
-    @State  var items: [ANap] = NapManager().getitem()
+//    @State var NewItemQuantity: String = ""
+//    @State  var items: [ANap] = NapManager().getitem()
 
     var body: some View {
         NavigationView {
@@ -48,7 +48,7 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    NavigationLink(destination: Nap(items:$items )){
+                    NavigationLink(destination: Nap()){
                         ZStack {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(.blue)

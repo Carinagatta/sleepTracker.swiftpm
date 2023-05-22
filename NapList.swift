@@ -8,18 +8,24 @@
 import Foundation
 import SwiftUI
 
-struct NapList: View {
+struct ListView: View {
     let currentitem: ANap
     @State private var overText = false
     var body: some View {
         VStack (alignment: .leading) {
-           
-            Text("Minutes: \(currentitem.minutes)")
+            //            Text(currentitem.name)
+            //                .font(.largeTitle)
+            //                .foregroundColor(overText ?.pink:.indigo)
+            //                .onHover{ over in
+            //                    overText = over
+            //                }
+            Text("Quantity: \(currentitem.quantity)")
                 .font(.title3)
                 .foregroundColor(overText ?.pink:.indigo)
-                
+                .onHover{ over in
+                    overText = over
+                }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
     }
+    
 }

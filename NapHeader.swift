@@ -8,44 +8,31 @@
 import Foundation
 import SwiftUI
 
-struct NapHeader: View {
-    //@State var NewItemName: String = ""
-    @Binding var NewItemQuantity: String
-   // @State private var overText = false
+struct HeaderView: View {
+    @State var NewItemName: String = ""
+    @State var NewItemQuantity: Int?
+    @State private var overText = false
     @Binding var items: [ANap]
     var body: some View {
         HStack{
-            TextField("Enter QUANTITY", text: $NewItemQuantity)
+            TextField("Enter QUANTITY", value: $NewItemQuantity, format: .number)
                 .foregroundColor(.purple)
-
+//            TextField("Enter Item Name", text: $NewItemName)
+//                .foregroundColor(.purple)
             Button(action: {
-//                guard let unwrappedQuantity = NewItemQuantity else {
-//                    return }
-                let newItem = ANap(minutes: NewItemQuantity)
-                items.append(newItem)
+                guard let unwrappedQuantity = NewItemQuantity else {
+                    return }
+//                items.append(newItem)
+//                NewItemName = ""
                 NewItemQuantity = nil
-                
-                updateArray()
             }, label: {
-
+                
                 Image(systemName: "plus.circle")
                     .font(.largeTitle)
             })
         }
         .padding()
         .textFieldStyle(.roundedBorder)
-        
             }
-    func updateArray() {
-          let newitems = ANap(minutes: NewItemQuantity)
-          items.append(newitems)
-          
-        NapManager().setitem(items: items)
-          
-         NewItemQuantity = " "
-       
-          
-          
-      }
 }
 

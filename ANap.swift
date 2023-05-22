@@ -8,6 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct ANap: Hashable, Codable{
-    var minutes: String
+struct ANap: Hashable {
+    var quantity: Int
 }
