@@ -25,16 +25,19 @@ struct sleepLog: View {
                 List{
                     
                     Text("Sleep goal: \(Shours) hours and \(Sminutes) minutes")
+                        .font(.system(size: 45))
                         .italic()
                         .foregroundColor(.white)
-                        .font(.title)
                         .listRowBackground(Color.blue)
                     
                     ForEach(items, id:\.self) { currentitem in
                         
                         logView(currentitem: currentitem)
-                        
-                            .listRowBackground(Color.blue.opacity(0.9))
+                            .font(.system(size: 50))
+
+                            .listRowBackground(Color.black.opacity(0.9))
+                            .foregroundColor(.white)
+                           
                     }
                     
                     .onDelete(perform: { (indexSet) in
@@ -47,7 +50,6 @@ struct sleepLog: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                
-                
                 
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {

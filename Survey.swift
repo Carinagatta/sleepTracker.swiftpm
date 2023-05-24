@@ -33,16 +33,17 @@ struct Survey: View {
                         .frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
                     Text("Sleep Survey")
                         .foregroundColor(.white)
-                        .font(.largeTitle)
+                        .font(.system(size: 45))
                 }
                 
                 Group {
                     Text("Is there light in your room when you are trying to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .frame(width: 40, height: 20)
+                            .frame(width: 60, height: 30)
                             .background(overText1 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -50,7 +51,7 @@ struct Survey: View {
                                 
                             }
                         Text("NO")
-                            .frame(width: 40, height: 20)
+                            .frame(width: 50, height: 30)
                             .background(overText2 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -63,18 +64,19 @@ struct Survey: View {
                 
                 Group {
                     Text("Is your room quiet when you are tryig to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .frame(width: 40, height: 20)
+                            .frame(width: 60, height: 30)
                             .background(overText3 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
                                 overText3.toggle()
                             }
                         Text("NO")
-                            .frame(width: 40, height: 20)
+                            .frame(width: 50, height: 30)
                             .background(overText4 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -87,12 +89,14 @@ struct Survey: View {
                 
                 Group {
                     Text("Do you use your phone right before you are trying to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         
                         Text("YES")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 60, height: 30)
                             .background(overText5 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -100,7 +104,8 @@ struct Survey: View {
                                 
                             }
                         Text("NO")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 50, height: 30)
                             .background(overText6 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -112,18 +117,21 @@ struct Survey: View {
                 
                 Group {
                     Text("is your room between 60 to 67 degreed Farengeight when you are trying to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         
                         Text("YES")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 60, height: 30)
                             .background(overText7 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
                                 overText7.toggle()}
                         Text("NO")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 50, height: 30)
                             .background(overText8 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -136,11 +144,13 @@ struct Survey: View {
                 
                 Group {
                     Text("Do you exerscise less than an hour before going to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 60, height: 30)
                             .background(overText9 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -148,7 +158,8 @@ struct Survey: View {
                                     
                             }
                         Text("NO")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 50, height: 30)
                             .background(overText10 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
@@ -160,18 +171,21 @@ struct Survey: View {
                 
                 Group {
                     Text("Do you take neps 20 minutes or less?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 60, height: 30)
                             .background(overText11 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
                                 overText11.toggle()
                             }
                         Text("NO")
-                            .frame(width: 40, height: 20)
+                            .font(.system(size: 30))
+                            .frame(width: 50, height: 30)
                             .background(overText12 ?.blue:.black)
                             .foregroundColor(.white)
                             .onTapGesture {
