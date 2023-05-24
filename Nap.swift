@@ -13,9 +13,13 @@ struct Nap: View {
     var body: some View {
         NavigationView{
             
-            List(items, id: \.self) { currentitem in
-                ListView(currentitem: currentitem)
+            List{
+                
+                ForEach(items, id: \.self) { currentitem in
+                    ListView(currentitem: currentitem)
+                }
             }
+           // .background(Color.black)
             .toolbar(content: {
                 ToolbarItem(placement: .navigation){
                     HeaderView(items: $items)
