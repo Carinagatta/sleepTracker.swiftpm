@@ -33,12 +33,13 @@ struct Survey: View {
                         .frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
                     Text("Sleep Survey")
                         .foregroundColor(.white)
-                        .font(.largeTitle)
+                        .font(.system(size: 45))
                 }
                 
                 Group {
                     Text("Is there light in your room when you are trying to sleep?")
-                        .frame(width: 500, height: 100)
+                        .frame(width: 700, height: 100)
+                        .font(.system(size: 30))
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
@@ -63,7 +64,8 @@ struct Survey: View {
                 
                 Group {
                     Text("Is your room quiet when you are tryig to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
@@ -87,7 +89,8 @@ struct Survey: View {
                 
                 Group {
                     Text("Do you use your phone right before you are trying to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         
@@ -112,7 +115,8 @@ struct Survey: View {
                 
                 Group {
                     Text("is your room between 60 to 67 degreed Farengeight when you are trying to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         
@@ -136,7 +140,8 @@ struct Survey: View {
                 
                 Group {
                     Text("Do you exerscise less than an hour before going to sleep?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
@@ -160,7 +165,8 @@ struct Survey: View {
                 
                 Group {
                     Text("Do you take neps 20 minutes or less?")
-                        .frame(width: 500, height: 100)
+                        .font(.system(size: 30))
+                        .frame(width: 700, height: 100)
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
