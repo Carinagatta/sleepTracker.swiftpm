@@ -8,6 +8,8 @@ struct ContentView: View {
     @State var newItemWakeupTime: String = ""
     @State var newItemhoursSlept: String = ""
     @State var hoursNeeded: String = ""
+//    @State var NewItemQuantity: String = ""
+//    @State  var items: [ANap] = NapManager().getitem()
 
     var body: some View {
         NavigationView {
