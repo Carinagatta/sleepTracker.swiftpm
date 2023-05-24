@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 struct ANap: Hashable {
-    var quantity: Int
+    var name: String
 }

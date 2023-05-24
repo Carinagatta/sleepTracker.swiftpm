@@ -15,16 +15,19 @@ struct HeaderView: View {
     @Binding var items: [ANap]
     var body: some View {
         HStack{
-            TextField("Enter QUANTITY", value: $NewItemQuantity, format: .number)
-                .foregroundColor(.purple)
-//            TextField("Enter Item Name", text: $NewItemName)
+//            TextField("Enter QUANTITY", value: $NewItemQuantity, format: .number)
 //                .foregroundColor(.purple)
+            TextField("Enter Item Name", text: $NewItemName)
+                .foregroundColor(.purple)
             Button(action: {
-                guard let unwrappedQuantity = NewItemQuantity else {
-                    return }
-//                items.append(newItem)
+                let newItem = ANap(name: NewItemName)
+                items.append(newItem)
+                NewItemName = ""
+//                guard NewItemQuantity != nil else {
+//                    return }
+//                items.append(NewItemName)
 //                NewItemName = ""
-                NewItemQuantity = nil
+//                NewItemQuantity = nil
             }, label: {
                 
                 Image(systemName: "plus.circle")
