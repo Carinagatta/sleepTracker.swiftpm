@@ -43,6 +43,7 @@ struct Survey: View {
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
+                            .font(.system(size: 30))
                             .frame(width: 60, height: 30)
                             .background(overText1 ?.blue:.black)
                             .foregroundColor(.white)
@@ -51,6 +52,7 @@ struct Survey: View {
                                 
                             }
                         Text("NO")
+                            .font(.system(size: 30))
                             .frame(width: 50, height: 30)
                             .background(overText2 ?.blue:.black)
                             .foregroundColor(.white)
@@ -69,6 +71,7 @@ struct Survey: View {
                         .foregroundColor(.white)
                     HStack{
                         Text("YES")
+                            .font(.system(size: 30))
                             .frame(width: 60, height: 30)
                             .background(overText3 ?.blue:.black)
                             .foregroundColor(.white)
@@ -76,6 +79,7 @@ struct Survey: View {
                                 overText3.toggle()
                             }
                         Text("NO")
+                            .font(.system(size: 30))
                             .frame(width: 50, height: 30)
                             .background(overText4 ?.blue:.black)
                             .foregroundColor(.white)
