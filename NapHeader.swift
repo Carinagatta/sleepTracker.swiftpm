@@ -14,28 +14,33 @@ struct HeaderView: View {
     @State private var overText = false
     @Binding var items: [ANap]
     var body: some View {
-        HStack{
-//            TextField("Enter QUANTITY", value: $NewItemQuantity, format: .number)
-//                .foregroundColor(.purple)
-            TextField("Enter Item Name", text: $NewItemName)
-                .foregroundColor(.purple)
-            Button(action: {
-                let newItem = ANap(name: NewItemName)
-                items.append(newItem)
-                NewItemName = ""
-//                guard NewItemQuantity != nil else {
-//                    return }
-//                items.append(NewItemName)
-//                NewItemName = ""
-//                NewItemQuantity = nil
-            }, label: {
-                
-                Image(systemName: "plus.circle")
-                    .font(.largeTitle)
-            })
-        }
-        .padding()
-        .textFieldStyle(.roundedBorder)
+      
+            VStack{
+                Text("Enter Number of Minutes Slept")
+                    .font(.title)
+                    .foregroundColor(.indigo)
+                HStack(alignment: .center){
+                    TextField("minutes", text: $NewItemName)
+                        .font(.title)
+                        .foregroundColor(.indigo)
+                        .frame(width: 700, height: 75, alignment: .center)
+                        .foregroundColor(.indigo)
+                    Button(action: {
+                        let newItem = ANap(name: NewItemName)
+                        items.append(newItem)
+                        NewItemName = ""
+                        
+                    }, label: {
+                        
+                        Image(systemName: "plus.circle")
+                            .font(.largeTitle)
+                            .foregroundColor(.indigo)
+                    })
+                }
             }
+            .padding()
+            .textFieldStyle(.roundedBorder)
+        
+    }
 }
 

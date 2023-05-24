@@ -13,18 +13,12 @@ struct ListView: View {
     @State private var overText = false
     var body: some View {
         VStack (alignment: .leading) {
-                        Text(currentitem.name)
+                        Text("\(currentitem.name) minutes")
                             .font(.largeTitle)
                             .foregroundColor(overText ?.pink:.indigo)
                             .onHover{ over in
                                 overText = over
                             }
-//            Text("Quantity: \(currentitem.quantity)")
-//                .font(.title3)
-//                .foregroundColor(overText ?.pink:.indigo)
-//                .onHover{ over in
-//                    overText = over
-//                }
         }
     }
     
