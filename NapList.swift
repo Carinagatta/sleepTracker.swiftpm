@@ -15,7 +15,7 @@ struct ListView: View {
         VStack (alignment: .leading) {
                         Text("\(currentitem.name) minutes")
                             .font(.largeTitle)
-                            .foregroundColor(overText ?.pink:.indigo)
+                            .foregroundColor(overText ?.pink:.white)
                             .onHover{ over in
                                 overText = over
                             }

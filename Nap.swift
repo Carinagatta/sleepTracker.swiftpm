@@ -14,19 +14,28 @@ struct Nap: View {
         NavigationView{
             
             List{
-                
-                ForEach(items, id: \.self) { currentitem in
-                    ListView(currentitem: currentitem)
-                }
+                Section("recomended nap time: 20 Minutes"){
+                    ForEach(items, id: \.self) { currentitem in
+                        ListView(currentitem: currentitem)
+                            .listRowBackground(Color.indigo)
+                            .listRowSeparatorTint(.black)
+                    }
+                    }
+                .foregroundColor(Color.white)
             }
-           // .background(Color.black)
             .toolbar(content: {
                 ToolbarItem(placement: .navigation){
                     HeaderView(items: $items)
                 }
             })
+            .listStyle(.plain)
+            .background(Color.black)
+          
         }
+        
         .navigationViewStyle(.stack)
+        .background(.black)
+
     }
 }
     
