@@ -29,16 +29,18 @@ struct sleepLog: View {
                             .italic()
                             .foregroundColor(.white)
                             .listRowBackground(Color.blue)
+                            
 
                         ForEach(items, id:\.self) { currentitem in
                             
                             logView(currentitem: currentitem)
-                                .font(.system(size: 50))
+                                .font(.title)
                             
                             //                            .listRowBackground(Color.black.opacity(0.9))
                             //                            .foregroundColor(.white)
-                                .listRowBackground(Color.blue)
-                                .listRowSeparatorTint(.black)
+                                .listRowBackground(Color.white)
+                                .foregroundColor(.blue)
+                                .listRowSeparatorTint(.white)
                         
                     }
                     
@@ -50,8 +52,8 @@ struct sleepLog: View {
                         sleepManager().setitems(items: items)
                     })
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-               
+                .frame(maxWidth:.infinity, maxHeight: .infinity)
+                .padding()
                 
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {

@@ -23,7 +23,7 @@ struct HeaderView: View {
                     .font(.system(size: 30))
                     .foregroundColor(.white)
                 HStack(alignment: .center){
-                    TextField("minutes", text: $NewItemName)
+                   TextField("minutes", text: $NewItemName)
                         .font(.title)
                         .foregroundColor(.blue)
                         .frame(width: 700, height: 75, alignment: .center)

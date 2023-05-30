@@ -14,23 +14,29 @@ struct InfoView: View {
     
     
     var body: some View {
-        Text("Enter your name")
-        TextField("name", text: $name)
-            .textFieldStyle(.roundedBorder)
-            .frame(width: 200, height: 10)
-        Text("and your age")
-        TextField("age", value: $age, format: .number)
-            .textFieldStyle(.roundedBorder)
-            .frame(width: 200, height: 10)
-        Text("")
-        Text("")
-        Button {
-            UserDefaults.standard.set(name, forKey: "name")
-            UserDefaults.standard.set(age, forKey: "age")
-        } label: {
-            Text("Save")
-                .foregroundColor(.blue)
+        VStack{
+            Text("Enter your name")
+            TextField("name", text: $name)
+                .textFieldStyle(.roundedBorder)
+                .frame(width: 200, height: 10)
+            Text("and your age")
+            TextField("age", value: $age, format: .number)
+                .textFieldStyle(.roundedBorder)
+                .frame(width: 200, height: 10)
+            Text("")
+            Text("")
+            Button {
+                UserDefaults.standard.set(name, forKey: "name")
+                UserDefaults.standard.set(age, forKey: "age")
+            } label: {
+                Text("Save")
+                    .foregroundColor(.blue)
+            }
+            
         }
+        .scaleEffect(1.5)
         
+
     }
+       
 }
