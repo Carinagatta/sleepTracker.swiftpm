@@ -17,7 +17,7 @@ struct Nap: View {
                 Section("recomended nap time: 20 Minutes"){
                     ForEach(items, id: \.self) { currentitem in
                         ListView(currentitem: currentitem)
-                            .listRowBackground(Color.indigo)
+                            .listRowBackground(Color.blue)
                             .listRowSeparatorTint(.black)
                     }
                     }

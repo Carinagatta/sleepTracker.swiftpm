@@ -18,13 +18,13 @@ struct HeaderView: View {
             VStack{
                 Text("Enter Number of Minutes Slept")
                     .font(.title)
-                    .foregroundColor(.indigo)
+                    .foregroundColor(.blue)
                 HStack(alignment: .center){
                     TextField("minutes", text: $NewItemName)
                         .font(.title)
-                        .foregroundColor(.indigo)
+                        .foregroundColor(.blue)
                         .frame(width: 700, height: 75, alignment: .center)
-                        .foregroundColor(.indigo)
+                        .foregroundColor(.blue)
                     Button(action: {
                         let newItem = ANap(name: NewItemName)
                         items.append(newItem)
@@ -34,7 +34,7 @@ struct HeaderView: View {
                         
                         Image(systemName: "plus.circle")
                             .font(.largeTitle)
-                            .foregroundColor(.indigo)
+                            .foregroundColor(.blue)
                     })
                 }
             }

@@ -23,21 +23,23 @@ struct sleepLog: View {
                 
                 
                 List{
-                    
-                    Text("Sleep goal: \(Shours) hours and \(Sminutes) minutes")
-                        .font(.system(size: 45))
-                        .italic()
-                        .foregroundColor(.white)
-                        .listRowBackground(Color.blue)
-                    
-                    ForEach(items, id:\.self) { currentitem in
-                        
-                        logView(currentitem: currentitem)
-                            .font(.system(size: 50))
-
-                            .listRowBackground(Color.black.opacity(0.9))
+                   
+                        Text("Sleep goal: \(Shours) hours and \(Sminutes) minutes")
+                            .font(.system(size: 45))
+                            .italic()
                             .foregroundColor(.white)
-                           
+                            .listRowBackground(Color.blue)
+
+                        ForEach(items, id:\.self) { currentitem in
+                            
+                            logView(currentitem: currentitem)
+                                .font(.system(size: 50))
+                            
+                            //                            .listRowBackground(Color.black.opacity(0.9))
+                            //                            .foregroundColor(.white)
+                                .listRowBackground(Color.blue)
+                                .listRowSeparatorTint(.black)
+                        
                     }
                     
                     .onDelete(perform: { (indexSet) in
@@ -56,8 +58,12 @@ struct sleepLog: View {
                         headerView(items: $items,newItembedTime: $newItembedTime,newItemWakeupTime: $newItemWakeupTime, newItemhoursSlept: $newItemhoursSlept)
                     }
                 }
+                .listStyle(.plain)
+                .background(Color.black)
                 .onAppear(perform: {
                     items = sleepManager().getitems()
+                    
+                
                     
                 })
                 
