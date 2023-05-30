@@ -14,13 +14,15 @@ struct Nap: View {
         NavigationView{
             
             List{
-                Section("recomended nap time: 20 Minutes"){
+                Section("")
+                {
                     ForEach(items, id: \.self) { currentitem in
                         ListView(currentitem: currentitem)
                             .listRowBackground(Color.indigo)
                             .listRowSeparatorTint(.black)
                     }
                     }
+                .font(.system(size: 30))
                 .foregroundColor(Color.white)
             }
             .toolbar(content: {

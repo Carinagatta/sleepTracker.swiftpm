@@ -17,8 +17,11 @@ struct HeaderView: View {
       
             VStack{
                 Text("Enter Number of Minutes Slept")
-                    .font(.title)
+                    .font(.system(size: 50))
                     .foregroundColor(.indigo)
+             Text("recomended nap time: 20 Minutes")
+                    .font(.system(size: 30))
+                    .foregroundColor(.white)
                 HStack(alignment: .center){
                     TextField("minutes", text: $NewItemName)
                         .font(.title)
